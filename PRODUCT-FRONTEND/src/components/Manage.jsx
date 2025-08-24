@@ -7,7 +7,7 @@ function Manage() {
 
     const fetchProducts = async () => {
         try {
-            const res = await axios.get('http://localhost:2030/products/all')
+            const res = await axios.get('http://localhost:2030/springbootproductapi/products/all')
             setProducts(res.data)
         } catch (err) {
             setMessage("Error fetching products.")
@@ -20,7 +20,7 @@ function Manage() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:2030/products/${id}`)
+            await axios.delete(`http://localhost:2030/springbootproductapi/products/${id}`)
             setMessage("Product deleted!")
             fetchProducts()
         } catch {

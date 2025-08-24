@@ -19,7 +19,7 @@ function AddProduct() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.post('http://localhost:2030/products', formData)
+            const res = await axios.post('http://localhost:2030/springbootproductapi/products', formData)
             setMessage("Product added successfully!")
             setFormData({ name: "", category: "", price: "" })
         } catch (err) {

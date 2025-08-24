@@ -11,7 +11,7 @@ function FindByName() {
         setProduct(null)
         setMessage("")
         try {
-            const res = await axios.get(`http://localhost:2030/products/search?name=${name}`)
+            const res = await axios.get(`http://localhost:2030/products/springbootproductapi/search?name=${name}`)
             // If backend returns an array, pick the first match
             let prod = res.data
             if (Array.isArray(prod)) {
