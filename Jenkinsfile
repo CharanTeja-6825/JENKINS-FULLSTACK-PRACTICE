@@ -5,7 +5,7 @@ pipeline {
         // ===== FRONTEND BUILD =====
         stage('Build Frontend') {
             steps {
-                dir('STUDENTAPI-REACT') {
+                dir('PRODUCT-FRONTEND') {
                     sh '''
                     export NVM_DIR="$HOME/.nvm"
                     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -26,7 +26,7 @@ pipeline {
         stage('Deploy Frontend to Tomcat') {
             steps {
                 sh '''
-                TOMCAT_DIR="/Users/charanteja/Applications/apache-tomcat-10.1.44/webapps/reactstudentapi"
+                TOMCAT_DIR="/Users/charanteja/Applications/apache-tomcat-10.1.44/webapps/reactproductapi"
 
                 if [ -d "$TOMCAT_DIR" ]; then
                     rm -rf "$TOMCAT_DIR"
@@ -41,7 +41,7 @@ pipeline {
         // ===== BACKEND BUILD =====
         stage('Build Backend') {
             steps {
-                dir('STUDENTAPI-SPRINGBOOT') {
+                dir('SpringBootProductDemo') {
                     sh '''
                     export PATH="/opt/homebrew/bin:$PATH"
                     mvn clean package
