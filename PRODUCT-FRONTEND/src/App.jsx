@@ -1,13 +1,21 @@
-import React from 'react'
-import Navbar from './components/Navbar'
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./Navbar";
+import AddProduct from "./AddProduct";
+import Manage from "./Manage";
+import FindByName from "./FindByName";
 
 function App() {
   return (
-    <div className='mt-5'>
-      <center className='text-4xl'>Welcome to Product Management System</center>
+    <BrowserRouter basename="/reactproductapi">
       <Navbar />
-    </div>
-  )
+      <Routes>
+        <Route path="/" element={<AddProduct />} />
+        <Route path="/manage" element={<Manage />} />
+        <Route path="/find" element={<FindByName />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
