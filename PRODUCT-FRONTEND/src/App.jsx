@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar";
 import AddProduct from "./AddProduct";
 import Manage from "./Manage";
 import FindByName from "./FindByName";
