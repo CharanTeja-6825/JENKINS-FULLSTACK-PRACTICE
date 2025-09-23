@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import AddProduct from "./AddProduct";
-import Manage from "./Manage";
-import FindByName from "./FindByName";
+import AddProduct from "./components/AddProduct";
+import Manage from "./components/Manage";
+import FindByName from "./components/FindByName";
 
 function App() {
   return (
     <BrowserRouter basename="/reactproductapi">
+      <center><h1 className="text-4xl font-bold">Product Manager</h1></center>
       <Navbar />
       <Routes>
         <Route path="/" element={<AddProduct />} />
