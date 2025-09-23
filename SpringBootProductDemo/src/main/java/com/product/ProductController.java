@@ -10,6 +10,11 @@ public class ProductController {
 
     private ProductService productService;
 
+    @GetMapping("/")
+    public String home(){
+        return "Jenkins Practice using Product Demo";
+    }
+
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
